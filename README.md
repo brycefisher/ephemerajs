@@ -49,7 +49,7 @@ At the end of this script, an array of 4 objects will be logged to the console s
 The ephemera object exposes an objectFactory method which returns a constructor function which you will eventually use to 
 create your pseudo random objects. You'll want to add several properties to the constructor first though.
 
-Use the addProperty() method of your objectFactory to define a custom property. The first parameter defines the name of the 
+Use the `addProperty()` method of your objectFactory to define a custom property. The first parameter defines the name of the 
 property you wish to create (ex: "name" in the example above). The second property is a two element array which contains the
 start and end positions in the UUID to reference when generating this property. The last property is a callback function that
 will transform the given portion of the UUID using whatever rules you wish. 
@@ -71,7 +71,7 @@ parameters and returns a customized callback function that will execute the tran
  
 ## Advanced Usage
 
-You can also define your own custom callback transformations. Transformation functions receive one integer as a parameter. Behind
+You can also define your own custom callback transformations. Transformation functions receive one float as a parameter. Behind
 the scenes, ephemera converts the UUID passed to the constructor into a floating point number between 0 and 1. The exact floating
 point value is determined by dividing the actual hex value by the total possible hex value. Ex:
 
@@ -80,9 +80,9 @@ point value is determined by dividing the actual hex value by the total possible
         Person = e.objectFactory(),
         someGuy;
    
-   Person.addProperty('age', [0,2], function(seed) { return seed; });
-   someGuy = Person(uuid);
-   console.log(someGuy.age);
+    Person.addProperty('age', [0,2], function(seed) { return seed; });
+    someGuy = Person(uuid);
+    console.log(someGuy.age);
 
 In the above code, Person() will extract a slice from the uuid variable (which is '10'). This will be divided by the 
 highest possible hex value. Since the string has length two, the highest possible hex value would be ff. So, the value passed to
