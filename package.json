@@ -1,0 +1,23 @@
+{
+  "author": "Bryce Fisher-Fleig",
+  "name": "ephemera",
+  "description": "Generates rich objects from random uuids",
+  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/brycefisher/ephemerajs"
+  },
+  "main": "./lib/ephemera",
+  "keywords": [
+    "uuid",
+    "random",
+    "generator"
+  ],
+  "bin": {},
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "node-uuid": "^1.4.1"
+  }
+}
