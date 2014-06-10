@@ -60,8 +60,9 @@ parameters and returns a customized callback function that will execute the tran
  + `int(min,max)` - creates a callback function which returns an integer between min and max for a given value from a UUID.
  + `float(min,max)` - creates a callback function which returns a float between min and max for a given value from a UUID.
  + `arr(items)` - creates a callback function which selects an item from the array items.
- + `arr(items, weights)` - creates a callback function which selects an item from the array items. Weights is an array of the same 
-   length as items but contains "cumulative frequencies" for the corresponding entry in items. Ex:
+ + `arr(items, weights)` - **NOT IMPLEMENTED YET** creates a callback function which selects an item from the array items. 
+   Weights is an array of the same length as items but contains "cumulative frequencies" for the corresponding entry in 
+   items. Ex:
    
      e.arr(['Sara', 'Joanna', 'Henrietta'], [0.5, 0.8, 1])
    
