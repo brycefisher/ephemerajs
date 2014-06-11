@@ -62,8 +62,8 @@ more parameters and returns a customized callback function that will execute the
  + `int(min,max)` - creates a callback function which returns an integer between min and max for a given value from a UUID.
  + `float(min,max)` - creates a callback function which returns a float between min and max for a given value from a UUID.
  + `arr(items)` - creates a callback function which selects an item from the array items.
- + `wArr(items, weights)` - creates a callback function which selects an item from the array items. Each element of items
-   is an obj with freq and value properties. The freq property is a float between 0 and 1 stating the probability that
+ + `wArr(items)` - creates a callback function which selects an item from the array of objects. Each element of items
+   is an object with freq and value properties. The freq property is a float between 0 and 1 stating the probability that
    this item is selected. Frequencies must add up to 1 altogether. If an item is selected, the value property will be
    returned. Ex:
    
