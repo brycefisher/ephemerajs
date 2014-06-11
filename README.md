@@ -62,11 +62,16 @@ more parameters and returns a customized callback function that will execute the
  + `int(min,max)` - creates a callback function which returns an integer between min and max for a given value from a UUID.
  + `float(min,max)` - creates a callback function which returns a float between min and max for a given value from a UUID.
  + `arr(items)` - creates a callback function which selects an item from the array items.
- + `wArr(items, weights)` - **NOT IMPLEMENTED YET** creates a callback function which selects an item from the array items.
-   Weights is an array of the same length as items but contains "cumulative frequencies" for the corresponding entry in 
-   items. Ex:
+ + `wArr(items, weights)` - creates a callback function which selects an item from the array items. Each element of items
+   is an obj with freq and value properties. The freq property is a float between 0 and 1 stating the probability that
+   this item is selected. Frequencies must add up to 1 altogether. If an item is selected, the value property will be
+   returned. Ex:
    
-     e.arr(['Sara', 'Joanna', 'Henrietta'], [0.5, 0.8, 1])
+     e.wArr([
+       {value:'Sara', freq:0.5},
+       {value:'Joanna', freq:0.3},
+       {value:'Henrietta', freq:0.2}
+     ]);
    
    In the above example, Sara has a 50% chance of being returned by the callback function. Joanna has a 30% chance, and
    Henrietta has a 20% chance.
