@@ -1,0 +1,10 @@
+{
+  "author"          : "Bryce Fisher-Fleig <bryce@fisher-fleig.org> (https://bryce.fisher-fleig.org)",
+  "name"            : "ephemera",
+  "description"     : "Extracts sections of uuids and transforms them into properties on vanilla object for use in games, simulations, and tests.",
+  "homepage"        : "https://github.com/brycefisher/ephemerajs",
+  "version"         : "0.0.1",
+  "main"            : "./lib/ephemera",
+  "license"         : "GPL-2.0+",
+  "keywords"        : ["uuid", "random", "generator", "mock", "simulation", "test data"]
+}
