@@ -1,23 +1,21 @@
 {
-  "author": "Bryce Fisher-Fleig",
-  "name": "ephemera",
-  "description": "Generates rich objects from random uuids",
-  "version": "0.0.1",
-  "repository": {
-    "url": "https://github.com/brycefisher/ephemerajs"
+  "author"          : "Bryce Fisher-Fleig <bryce@fisher-fleig.org> (https://bryce.fisher-fleig.org)",
+  "name"            : "ephemera",
+  "description"     : "Extracts sections of uuids and transforms them into properties on vanilla object for use in games, simulations, and tests.",
+  "homepage"        : "https://github.com/brycefisher/ephemerajs",
+  "version"         : "0.0.1",
+  "repository"      : {
+    "type" : "git",
+    "url"  : "https://github.com/brycefisher/ephemerajs.git"
   },
-  "main": "./lib/ephemera",
-  "keywords": [
-    "uuid",
-    "random",
-    "generator"
-  ],
-  "bin": {},
-  "dependencies": {},
-  "engines": {
-    "node": "*"
+  "bugs"            : {
+  	"url"  : "https://github.com/brycefisher/ephemerajs/issues"
   },
-  "devDependencies": {
+  "main"            : "./lib/ephemera",
+  "examples"        : "./examples",
+  "license"         : "GPL-2.0+",
+  "keywords"        : ["uuid", "random", "generator", "mock", "simulation", "test data"],
+  "devDependencies" : {
     "node-uuid": "^1.4.1"
   }
 }
