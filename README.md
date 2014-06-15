@@ -14,18 +14,18 @@ system is pluggable so that you can create your own custom transformations.
     	names = ['Mike', 'John', 'Steve'],
         Person = e.objectFactory(),
         people = [];
-    
+
     Person
         .addProperty('age', [0,4], e.int(18,65));
         .addProperty('weight', [0,4], e.float(100,250));
         .addProperty('name', [2,16], e.arr(names));
-    
+
     for (; i<4; i++) {
     	people.push(Person(uuid.v4()));
     }
-    
+
     console.log(people);
-    
+
 At the end of this script, an array of 4 objects will be logged to the console something like this:
 
     [{
@@ -48,7 +48,7 @@ At the end of this script, an array of 4 objects will be logged to the console s
 
 ## Usage
 
-The ephemera object exposes an objectFactory method which returns a constructor function which you will eventually use to 
+The ephemera object exposes an objectFactory method which returns a constructor function which you will eventually use to
 create your objects. You'll want to add several properties to the constructor first though.
 
 Use the `addProperty()` method of your objectFactory to define a custom property. The first parameter defines the name of
@@ -66,16 +66,17 @@ more parameters and returns a customized callback function that will execute the
    is an object with freq and value properties. The freq property is a float between 0 and 1 stating the probability that
    this item is selected. Frequencies must add up to 1 altogether. If an item is selected, the value property will be
    returned. Ex:
-   
+
      e.wArr([
        {value:'Sara', freq:0.5},
        {value:'Joanna', freq:0.3},
        {value:'Henrietta', freq:0.2}
      ]);
-   
+
    In the above example, Sara has a 50% chance of being returned by the callback function. Joanna has a 30% chance, and
    Henrietta has a 20% chance.
- 
+ + `colorHex()` - creates a callback which returns hexadecimal colors values.
+
 ### Custom Transformations
 
 You can also define your own custom callback transformations. Transformation functions receive one float as the first
@@ -87,7 +88,7 @@ possible hex value. Ex:
         e = require('ephemera'),
         Person = e.objectFactory(),
         somebody;
-   
+
     Person.addProperty('age', [0,2], function(float) { return float; });
     somebody = Person(uuid);
     console.log(somebody.age);

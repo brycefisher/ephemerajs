@@ -107,4 +107,20 @@ describe('ephemera', function(){
       });
     });
   });
+
+  describe('#colorHex', function(){
+    var helper = e.colorHex();
+
+    it('should return a helper function', function(){
+      helper.should.be.a.function;
+    });
+
+    describe('-> (returned function)', function(){
+      it('should return a valid hexadecimal color value', function(){
+        for (var i=0; i<=20; i++){
+          ( helper(i/20) ).should.match(/^#[0-9a-f]{6}/i);
+        }
+      });
+    });
+  });
 });
