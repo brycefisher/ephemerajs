@@ -11,7 +11,7 @@ describe('ephemera', function(){
       Builder.should.be.a.function;
     });
 
-    describe('returned constructor function', function(){
+    describe('-> (returned constructor function)', function(){
       it('should have method #addProperty', function(){
         Builder.addProperty.should.be.a.function;
       });
@@ -26,7 +26,7 @@ describe('ephemera', function(){
       helper.should.be.a.function;
     });
 
-    describe('returned helper function', function(){
+    describe('-> (returned helper function)', function(){
       it('should return numbers between min and max parameters', function(){
         for (var i=0; i<20; i++){
           ( helper(i/20) ).should.be.within(0,100);
@@ -50,7 +50,7 @@ describe('ephemera', function(){
       helper.should.be.a.function;
     });
 
-    describe('returned helper function', function(){
+    describe('-> (returned helper function)', function(){
       it('should return numbers between min and max parameters', function(){
         for (var i=0; i<20; i++){
           ( helper(i/20) ).should.be.within(5,6);
@@ -67,11 +67,43 @@ describe('ephemera', function(){
       helper.should.be.a.function;
     });
 
-    describe('returned function', function(){
+    describe('-> (returned function)', function(){
       it('should return elements from array', function(){
         for (var i=0; i<20; i++){
           items.should.containEql( helper(i/20) );
         }
+      });
+    });
+  });
+
+  describe('#wArr', function(){
+    var items = [
+          {value:'FreeBSD', freq:0.1},
+          {value:'Ubuntu', freq:0.2},
+          {value:'OSX', freq:0.3},
+          {value:'Windows', freq:0.4}
+        ],
+        helper = e.wArr(items);
+
+    it('should return a helper function', function(){
+      helper.should.be.a.function;
+    });
+
+    describe('-> (returned function)', function(){
+      it('should return value properties from array objects', function(){
+        for (var i=0; i<20; i++){
+          ['FreeBSD','Ubuntu','OSX','Windows'].should.containEql( helper(i/20) );
+        }
+      });
+
+      it('should weight return values deterministically', function(){
+        helper(1/20).should.equal('FreeBSD');
+        helper(3/20).should.equal('Ubuntu');
+        helper(5/20).should.equal('Ubuntu');
+        helper(7/20).should.equal('OSX');
+        helper(11/20).should.equal('OSX');
+        helper(13/20).should.equal('Windows');
+        helper(20/20).should.equal('Windows');
       });
     });
   });
