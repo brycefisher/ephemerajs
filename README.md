@@ -76,6 +76,8 @@ more parameters and returns a customized callback function that will execute the
    In the above example, Sara has a 50% chance of being returned by the callback function. Joanna has a 30% chance, and
    Henrietta has a 20% chance.
  + `colorHex()` - creates a callback which returns hexadecimal colors values.
+ + `colorHexRange(min,max)` - creates a callback which returns hexadecimal colors values between min and max, where min and
+   max are hex color codes (#000000 - #ffffff).
 
 ### Custom Transformations
 
