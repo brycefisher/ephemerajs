@@ -26,7 +26,6 @@
     "test data"
   ],
   "devDependencies": {
-    "node-uuid": "^1.4.1",
     "should": "^4.0.4"
   }
 }
