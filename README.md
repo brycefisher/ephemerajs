@@ -1,4 +1,4 @@
-EphemeraJS
+EphemeraJS [![Build Status](https://travis-ci.org/brycefisher/ephemerajs.svg?branch=master)](https://travis-ci.org/brycefisher/ephemerajs)
 ----------
 
 A library for converting random uuid strings into full bodied objects. Intended applications include games, tests, and
