@@ -132,34 +132,34 @@ describe('ephemera', function(){
     });
 
     // Unfortunately, shouldjs + mocha choke when functions throw....even with .should.throw()
-    it.skip('should throw an exception for missing parameter', function(){
-      (e.colorHexRange('#112233')).should.throw();
+    it('should throw an exception for missing parameter', function(){
+      (function(){ e.colorHexRange('#112233' ) }).should.throw();
     });
 
-    it.skip('should throw an exception for hex codes without #', function(){
-      (e.colorHexRange('000000','#112233')).should.throw();
-      (e.colorHexRange('#000000','112233')).should.throw();
+    it('should throw an exception for hex codes without #', function(){
+      (function(){ e.colorHexRange('000000','#112233' ) }).should.throw();
+      (function(){ e.colorHexRange('#000000','112233' ) }).should.throw();
     });
 
 
-    it.skip('should throw an exception for hex codes not 7 characters', function(){
-      (e.colorHexRange('#112233','#0000000')).should.throw();
-      (e.colorHexRange('#0000000000','#112233')).should.throw();
-      (e.colorHexRange('#112233','#0000')).should.throw();
-      (e.colorHexRange('#000','#112233')).should.throw();
-      (e.colorHexRange('#000000','#112233')).should.not.throw();
+    it('should throw an exception for hex codes not 7 characters', function(){
+      (function(){ e.colorHexRange('#112233','#0000000') }).should.throw();
+      (function(){ e.colorHexRange('#0000000000','#112233') }).should.throw();
+      (function(){ e.colorHexRange('#112233','#0000') }).should.throw();
+      (function(){ e.colorHexRange('#000','#112233') }).should.throw();
+      (function(){ e.colorHexRange('#000000','#112233') }).should.not.throw();
     });
 
-    it.skip('should throw an exception for hex codes with invalid characters', function(){
-      (e.colorHexRange('#ghijkl','#000000')).should.throw();
-      (e.colorHexRange('#000000','#abc*/\'')).should.throw();
-      (e.colorHexRange('##1234ff','#000000')).should.throw();
-      (e.colorHexRange('#012345','#6789ab')).should.not.throw();
-      (e.colorHexRange('#cdef00','#000000')).should.not.throw();
+    it('should throw an exception for hex codes with invalid characters', function(){
+      (function(){ e.colorHexRange('#ghijkl','#000000' ) }).should.throw();
+      (function(){ e.colorHexRange('#000000','#abc*/\'' ) }).should.throw();
+      (function(){ e.colorHexRange('##1234ff','#000000' ) }).should.throw();
+      (function(){ e.colorHexRange('#012345','#6789ab' ) }).should.not.throw();
+      (function(){ e.colorHexRange('#cdef00','#000000' ) }).should.not.throw();
     });
 
     it('should be case insensitive', function(){
-      (e.colorHexRange('#abcdef','#ABCDEF')).should.not.throw();
+      (function(){ e.colorHexRange('#abcdef','#ABCDEF' ) }).should.not.throw();
     });
 
     describe('-> (returned function)', function(){
