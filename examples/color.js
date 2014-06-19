@@ -10,7 +10,6 @@ Palette
 
 console.log(Palette(uuid.v4()));
 
-
 SkinColors
   .addProperty('skin', [0,32], e.colorHexRange('#e6d4ca', '#b68157'));
 
