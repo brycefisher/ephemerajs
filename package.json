@@ -3,7 +3,7 @@
   "name": "ephemera",
   "description": "Extracts sections of uuids and transforms them into properties on vanilla object for use in games, simulations, and tests.",
   "homepage": "https://github.com/brycefisher/ephemerajs",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/brycefisher/ephemerajs.git"
